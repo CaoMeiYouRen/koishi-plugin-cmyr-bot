@@ -1,0 +1,114 @@
+{
+  "name": "koishi-plugin-cmyr-bot",
+  "version": "0.1.0",
+  "description": "对接草梅机器人平台",
+  "author": "CaoMeiYouRen",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "lint": "cross-env NODE_ENV=production eslint src --fix --ext .ts,.js,.cjs,.mjs",
+    "release": "semantic-release",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "analyzer": "cross-env NODE_ENV=production ANALYZER=true rollup -c",
+    "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
+    "dev:rollup": "cross-env NODE_ENV=development rollup -c -w",
+    "rm": "rimraf node_modules",
+    "start": "node ./dist/index",
+    "commit": "cz",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/debug": "^4.1.12",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "conventional-changelog-cmyr-config": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog-cmyr": "^1.0.0",
+    "debug": "^4.3.4",
+    "eslint": "^8.54.0",
+    "eslint-config-cmyr": "^1.1.30",
+    "eslint-plugin-import": "^2.28.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.6.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-visualizer": "^5.9.3",
+    "semantic-release": "^22.0.8",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog-cmyr"
+    }
+  },
+  "changelog": {
+    "language": "zh"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin"
+  ],
+  "homepage": "https://github.com/CaoMeiYouRen/koishi-plugin-cmyr-bot#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaoMeiYouRen/koishi-plugin-cmyr-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CaoMeiYouRen/koishi-plugin-cmyr-bot/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "go-cqwebsocket": "^6.2.13",
+    "tslib": "^2.6.2"
+  },
+  "peerDependencies": {
+    "koishi": "^4.15.6"
+  },
+  "koishi": {
+    "preview": true
+  }
+}
