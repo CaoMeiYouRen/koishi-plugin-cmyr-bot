@@ -44,7 +44,7 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
         typescript({
             tsconfig: 'tsconfig.json',
             module: 'esnext',
-            target: 'es2019', // node >= 12
+            target: 'es2022',
             declaration: isDeclaration,
             sourceMap,
         }),
@@ -101,7 +101,14 @@ export default defineConfig([
             name: outputName,
             // sourcemap: sourceMap,
         },
-        plugins: [dts()],
+        plugins: [dts({
+            compilerOptions: {
+                module: 'esnext',
+                target: 'es2022',
+                declaration: true,
+                sourceMap,
+            },
+        })],
     },
     {
         input: 'src/index.ts',
