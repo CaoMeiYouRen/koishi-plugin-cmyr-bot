@@ -17,7 +17,7 @@
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
 </p>
-
+**本项目还在开发中**
 
 > 对接草梅机器人平台
 
@@ -30,18 +30,23 @@
 
 
 - node >=16
+-  koishi >= 4.15.6
 
 ## 🚀 安装
 
-```sh
-npm install koishi-plugin-cmyr-bot
-```
+前往 koishi 插件市场搜索 `cmyr-bot`安装即可
 
 ## 👨‍💻 使用
 
-```sh
-npm run start
-```
+首先完成草梅机器人的配置，从平台获取 robotId 和 accessToken，再点击右上方启用插件即可
+
+![image-20231130230751918](https://cmyr-picgo.cmyr.ltd/images/202311302307010.png?x-oss-process=style/compressed-picture)
+
+随后可在沙盒环境发送`cmyrbot 帮助`来测试对接是否成功。
+
+如果有返回数据即为对接成功【如下图所示】。
+
+![image-20231130231003581](https://cmyr-picgo.cmyr.ltd/images/202311302310628.png?x-oss-process=style/compressed-picture)
 
 ## 🛠️ 开发
 
