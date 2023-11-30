@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
 import { Context, Schema, h, Logger } from 'koishi'
 import { CQ } from 'go-cqwebsocket'
 import { msgTags } from 'go-cqwebsocket/out/tags'

@@ -10,6 +10,7 @@
         "outDir": "./dist", //重定向输出目录。
         "declaration": true, //生成类型文件
         "importHelpers": true,
+        "skipLibCheck": true,
         "strictPropertyInitialization": false,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true, //开启装饰器
@@ -18,6 +19,9 @@
         "moduleResolution": "node",
         "esModuleInterop": true,
         "baseUrl": ".",
+        "types": [
+            "node",
+        ],
         "paths": {
             "@/*": [
                 "src/*"
@@ -31,8 +35,10 @@
         ]
     },
     "include": [
+        "src",
         "src/*.ts",
         "src/**/*.ts",
+        "src/apis/index.ts"
     ],
     "exclude": [
         "node_modules",
