@@ -61,6 +61,7 @@
     "eslint-config-cmyr": "^1.1.30",
     "eslint-plugin-import": "^2.28.1",
     "husky": "^8.0.3",
+    "koishi": "^4.15.6",
     "lint-staged": "^15.1.0",
     "rimraf": "^5.0.5",
     "rollup": "^4.6.0",
